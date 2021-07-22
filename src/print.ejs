@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+	<title>Document</title>
+</head>
+<body class="bg-purple-100">
+	<style>
+		table {
+			width: 100%;
+		}
+		th{
+			text-align: left;
+		}
+	</style>
+	<div class="m-8">
+		<h1 class="text-3xl">lista de passageiros</h1>
+		<p>Quantidade: <%= passengers.length == 1 ? "1 passageiro" : passengers.length+ " passageiros" %></p>
+		<table>
+			<thead>
+				<th>Nome</th>
+				<th>Numero do voo</th>
+				<th>Tempo</th>
+			</thead>
+			<tbody >
+				<% if (passengers.length > 0) { %>
+					<% passengers.forEach(passenger => { %>
+						<tr>
+							<td><%= passenger.name %></td>
+							<td><%= passenger.flightNumber %></td>
+							<td><%= passenger.time %></td>
+						</tr>	
+					<% }); %>
+				<% } %>
+			</tbody>
+		</table>
+	</div>
+</body>
+</html>
